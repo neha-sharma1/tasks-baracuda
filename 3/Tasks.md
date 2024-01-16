@@ -10,11 +10,11 @@
 
 *In the utils.js the `validateForm()` misses the comparison if the two passwords match. Add this check using the `compareStrings()` function.*
 
-* [ ] Create an `if`-statement that checks if the password match. If they don't match, the `validateForm` function should return `false` and add the CSS class `is-invalid` to the field with the ID `inputPasswordRepeat`.
-* [ ] Comment your code.
+* [x] Create an `if`-statement that checks if the password match. If they don't match, the `validateForm` function should return `false` and add the CSS class `is-invalid` to the field with the ID `inputPasswordRepeat`.
+* [x] Comment your code.
 
 ## Custom scripts.js
-* [ ] In the `scripts.js`, add an event listener to the form with the ID `registerForm` that listens to the `submit` event. In case of the event, use the `validateForm()` function to check if all input is valid. If not, prevent submitting the form. Only if all validations passed, allow submitting the form.
+* [x] In the `scripts.js`, add an event listener to the form with the ID `registerForm` that listens to the `submit` event. In case of the event, use the `validateForm()` function to check if all input is valid. If not, prevent submitting the form. Only if all validations passed, allow submitting the form.
 
 ## Links
 
