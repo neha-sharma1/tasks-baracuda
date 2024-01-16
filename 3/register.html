@@ -74,6 +74,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 <script>
-    const urlParams=new URLSearchParams(document.location.search);if(!0===urlParams.has("email")&&!0===urlParams.has("password")&&!0===urlParams.has("passwordRepeat")){let a=!0,e=urlParams.get("email");if(null===String(e).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)&&(alert("An invalid Email address was submitted!"),a=!1),urlParams.get("password")!==urlParams.get("passwordRepeat")&&(alert("Passwords don't match!"),a=!1),void 0===window.bootstrap&&(alert("Bootstrap JavaScript ist not loaded!"),a=!1),!0===a){let a=document.querySelector("body");a.innerHTML+='<div class="row col-md-6 offset-md-3 mt-3"><iframe src="https://giphy.com/embed/9g8PH1MbwTy4o" width="480" height="313" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>'}}
+    const urlParams = new URLSearchParams(document.location.search);
+    if (!0 === urlParams.has("email") && !0 === urlParams.has("password") && !0 === urlParams.has("passwordRepeat")) {
+        let a = !0, e = urlParams.get("email");
+        if (null === String(e).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) && (alert("An invalid Email address was submitted!"), a = !1), urlParams.get("password") !== urlParams.get("passwordRepeat") && (alert("Passwords don't match!"), a = !1), void 0 === window.bootstrap && (alert("Bootstrap JavaScript ist not loaded!"), a = !1), !0 === a) {
+            let a = document.querySelector("body");
+            a.innerHTML += '<div class="row col-md-6 offset-md-3 mt-3"><iframe src="https://giphy.com/embed/9g8PH1MbwTy4o" width="480" height="313" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>';
+        }
+    }
 </script>
 </html>
