@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrierung | Argos Incident Manager</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Argos</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNav"
+                    aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="topNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Incidents</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <h1 class="mt-3 mb-3">Registrierung</h1>
+                    <form id="registerForm" method="get">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="inputEmail" name="email"
+                                placeholder="name@example.com" required>
+                            <label for="inputEmail">Email</label>
+                            <div id="emailInvalid" class="invalid-feedback mt-3">Die Email-Adresse ist ungültig.</div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="inputPassword" name="password"
+                                placeholder="Passwort" required>
+                            <label for="inputPassword">Passwort</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control" id="inputPasswordRepeat" name="passwordRepeat"
+                                placeholder="Passwort wiederholen" required>
+                            <label for="inputPasswordRepeat">Passwort wiederholen</label>
+                            <div id="passwordsMatchInvalid" class="invalid-feedback mt-3">Die Passwörter stimmen nicht
+                                überein.</div>
+                        </div>
+                        <div class="mt-3">
+                            <button type="submit" class="form-control btn btn-primary">Absenden</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+
+    <!-- JavaScripts -->
+
+</body>
+<script>
+    const urlParams=new URLSearchParams(document.location.search);if(!0===urlParams.has("email")&&!0===urlParams.has("password")&&!0===urlParams.has("passwordRepeat")){let a=!0,e=urlParams.get("email");if(null===String(e).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)&&(alert("An invalid Email address was submitted!"),a=!1),urlParams.get("password")!==urlParams.get("passwordRepeat")&&(alert("Passwords don't match!"),a=!1),void 0===window.bootstrap&&(alert("Bootstrap JavaScript ist not loaded!"),a=!1),!0===a){let a=document.querySelector("body");a.innerHTML+='<div class="row col-md-6 offset-md-3 mt-3"><iframe src="https://giphy.com/embed/9g8PH1MbwTy4o" width="480" height="313" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>'}}
+</script>
+</html>

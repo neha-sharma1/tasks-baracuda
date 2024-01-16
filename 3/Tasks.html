@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Include Files</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h2 id="include-files">Include Files</h2>
+<p><em>Hinweise: Die CSS-Dateien sollten am Ende des</em> <code>&lt;head&gt;</code>-Tags eingebunden werden. Die JavaScipt-Dateien am ende des <code>&lt;body&gt;</code>-Tags</p>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Include the <code>js/utils.js</code> in the page.</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Create your own <code>js/scripts.js</code> and embed it after the <code>utils.js</code>.</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Include the current files of <a href="https://getbootstrap.com">Bootstrap</a> (either through their CDN or download the files).</li>
+</ul>
+<h3 id="additions-to-utilsjs">Additions to utils.js</h3>
+<p><em>In the utils.js the <code>validateForm()</code> misses the comparison if the two passwords match. Add this check using the <code>compareStrings()</code> function.</em></p>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Create an <code>if</code>-statement that checks if the password match. If they don't match, the <code>validateForm</code> function should return <code>false</code> and add the CSS class <code>is-invalid</code> to the field with the ID <code>inputPasswordRepeat</code>.</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Comment your code.</li>
+</ul>
+<h2 id="custom-scriptsjs">Custom scripts.js</h2>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> In the <code>scripts.js</code>, add an event listener to the form with the ID <code>registerForm</code> that listens to the <code>submit</code> event. In case of the event, use the <code>validateForm()</code> function to check if all input is valid. If not, prevent submitting the form. Only if all validations passed, allow submitting the form.</li>
+</ul>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById">document.getElementById()</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">Document.querySelector()</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Browser Elements</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList">Element.classList</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">Browser Events</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener">EventTarget.addEventListener()</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault">Event.preventDefault()</a></li>
+<li><a href="https://getbootstrap.com/">Bootstrap</a></li>
+</ul>
+
+            
+            
+        </body>
+        </html>

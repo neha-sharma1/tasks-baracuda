@@ -1,0 +1,16 @@
+{
+    "name": "cudahire/guzzlewrapper",
+    "authors": [
+        {
+            "name": "Your Name",
+            "email": "name@example.com"
+        }
+    ],
+    "autoload" : {
+
+    },
+
+    "require": {
+
+    }
+}
