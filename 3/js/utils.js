@@ -44,8 +44,16 @@ const validateForm = function () {
         return false;
     }
 
-    /**
-     * @todo Compare Passwords by using the compareStrings function
-     */
+    // Validate Password
+    let $password = document.getElementById('inputPassword');
+    let $passwordRepeat = document.getElementById('inputPasswordRepeat');
+    let isPasswordSame = compareStrings($password.value, $passwordRepeat.value);
 
+    if (isPasswordSame === false) {
+        $passwordRepeat.classList.add('is-invalid');
+        return false;
+    }
+
+    // If we're here, there are no errors
+    return true;
 }
