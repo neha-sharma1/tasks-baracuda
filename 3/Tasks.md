@@ -2,9 +2,9 @@
 
 *Hinweise: The CSS files should be included at the end of the head tag. The JavaScipt files at the end of the body tag
 
-* [ ] Include the `js/utils.js` in the page.
-* [ ] Create your own `js/scripts.js` and embed it after the `utils.js`.
-* [ ] Include the current files of [Bootstrap](https://getbootstrap.com) (either through their CDN or download the files).
+* [x] Include the `js/utils.js` in the page.
+* [x] Create your own `js/scripts.js` and embed it after the `utils.js`.
+* [x] Include the current files of [Bootstrap](https://getbootstrap.com) (either through their CDN or download the files).
 
 ### Additions to utils.js
 
