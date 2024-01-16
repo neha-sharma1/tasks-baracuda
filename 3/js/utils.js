@@ -2,7 +2,7 @@
  * Checks if an Email Address is valid
  * 
  * @param {string} email 
- * @returns bool
+ * @returns boolean
  */
 const validateEmail = (email) => {
     return (String(email)
@@ -17,7 +17,7 @@ const validateEmail = (email) => {
  * 
  * @param {string} str1 
  * @param {string} str2 
- * @returns bool
+ * @returns boolean
  */
 const compareStrings = function (str1, str2) {
     return (str1 === str2);
@@ -26,7 +26,7 @@ const compareStrings = function (str1, str2) {
 /**
  * Check if the registration form is completely and correctly filled out.
  * 
- * @returns bool
+ * @returns boolean
  */
 const validateForm = function () {
     // Find all Elements that were validated previously
@@ -44,8 +44,16 @@ const validateForm = function () {
         return false;
     }
 
-    /**
-     * @todo Compare Passwords by using the compareStrings function
-     */
+    // Validate Password
+    let $password = document.getElementById('inputPassword');
+    let $passwordRepeat = document.getElementById('inputPasswordRepeat');
+    let isPasswordSame = compareStrings($password.value, $passwordRepeat.value);
 
+    if (isPasswordSame === false) {
+        $passwordRepeat.classList.add('is-invalid');
+        return false;
+    }
+
+    // If we're here, there are no errors
+    return true;
 }
