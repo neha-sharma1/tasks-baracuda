@@ -1,17 +1,21 @@
 <?php
 // Add comments
+namespace Api;
+
 class GuzzleWrapper {
 	
 	private $username;
 	private $password;
 	
-    public function __construct() {
+    public function __construct($username, $password) {
+        $this->username = $username;
+        $this->password = $password;
     }
     public function getAll() {
         // Add your implementation here
     }
     public function get( $id ) {
-        $client = new GuzzleHttp\Client( [ 'base_uri'  => 'https://jsonplaceholder.typicode.com/', 'verify' => false ] );
+        $client = new \GuzzleHttp\Client( [ 'base_uri'  => 'https://jsonplaceholder.typicode.com/', 'verify' => false ] );
         $res = $client->request( 'GET', 'posts/' . $id );
         if( $res->getStatusCode() === 200 ) {
             return $res->getBody()->__toString();

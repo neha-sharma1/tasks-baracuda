@@ -1,4 +1,6 @@
 <?php
+require 'vendor/autoload.php';
+
 /**
  *
  * Imagine a fictional RESTful JSON API that
@@ -24,10 +26,10 @@
  * 1) Install Composer ✅
  * 2) Install guzzlehttp/guzzle via Composer. ✅
  * 3) Use guzzle to make your requests to the API as shown in the GET method.
- * 4) Add basic authentication parameter to the request by updating the constructor (__construct()) of the GuzzleWrapper class ( username = testuser, password = thisisatest123 ).
+ * 4) Add basic authentication parameter to the request by updating the constructor (__construct()) of the GuzzleWrapper class ( username = testuser, password = thisisatest123 ). ✅
  * 5) Add typed parameters to all methods. (https://www.php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration)
  * 6) Comment the methods (in english)
- * 7) Extend the class to be namespaced and managed via Composer Autolader
+ * 7) Extend the class to be namespaced and managed via Composer Autolader ✅
  *
  * Could this class and the existing get()/getAll() methods be implemented differently?
  * What would you change about it? Hint: Constructor, Properties?
@@ -39,7 +41,10 @@
  *
  */
 // Initialization of the Wrapper and getting an article should work like this:
+$username = 'testuser';
+$password = 'thisisatest123';
 $api = new Api\GuzzleWrapper( $username, $password );
 
-$posts = $api->getAll(); //for all posts
+// $posts = $api->getAll(); //for all posts
 $post = $api->get( 1 ); //for a single post
+var_dump($post);
