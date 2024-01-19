@@ -8,3 +8,8 @@ php -r "unlink('composer-setup.php');"
 
 sudo mv composer.phar /usr/local/bin/composer
 ```
+
+# Install packages
+```
+composer require guzzlehttp/guzzle
+```
