@@ -9,6 +9,12 @@ class GuzzleWrapper {
 	
     private $client;
 
+    /**
+     * Constructor
+     * 
+     * @param string $username
+     * @param string $password
+     */
     public function __construct($username, $password) {
         $this->username = $username;
         $this->password = $password;
@@ -18,19 +24,29 @@ class GuzzleWrapper {
             'auth' => [$this->username, $this->password]
         ]);
     }
-    public function getAll() {
-        $res = $this->client->request( 'GET', 'posts/' );
+
+    /**
+     * Get the body
+     * 
+     * @param Response $res
+     * @return string|null
+     */
+    public function getBody($res) {
         if( $res->getStatusCode() === 200 ) {
             return $res->getBody()->__toString();
         }
+        // return exception otherwise?
+        
         return null;
+    }
+
+    public function getAll() {
+        $res = $this->client->request( 'GET', 'posts/' );
+        return $this->getBody($res);
     }
     public function get( $id ) {
         $res = $this->client->request( 'GET', 'posts/' . $id );
-        if( $res->getStatusCode() === 200 ) {
-            return $res->getBody()->__toString();
-        }
-        return null;
+        return $this->getBody($res);
     }
 
     public function post( $post ) {
