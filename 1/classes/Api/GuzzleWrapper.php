@@ -44,12 +44,24 @@ class GuzzleWrapper {
         return null;
     }
 
+    /**
+     * Get all posts
+     * 
+     * @return string|null
+     */
     public function getAll() {
         $res = $this->client->request( 'GET', $this->resource );
         return $this->getBody($res);
     }
-    public function get( $id ) {
-        $res = $this->client->request( 'GET', $this->resource . $id );
+
+    /**
+     * Get a post
+     * 
+     * @param int $id
+     * @return string|null
+     */
+    public function get($id) {
+        $res = $this->client->request('GET', $this->resource . $id);
         return $this->getBody($res);
     }
 
