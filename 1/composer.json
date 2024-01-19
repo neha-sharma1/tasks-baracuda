@@ -2,8 +2,8 @@
     "name": "cudahire/guzzlewrapper",
     "authors": [
         {
-            "name": "Your Name",
-            "email": "name@example.com"
+            "name": "Neha Sharma",
+            "email": "nehasharma0321@gmail.com"
         }
     ],
     "autoload" : {
@@ -11,6 +11,6 @@
     },
 
     "require": {
-
+        "guzzlehttp/guzzle": "^7.8"
     }
 }

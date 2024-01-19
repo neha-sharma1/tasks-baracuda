@@ -21,8 +21,8 @@
  *
  * Your tasks are:
  *
- * 1) Install Composer
- * 2) Install guzzlehttp/guzzle via Composer.
+ * 1) Install Composer ✅
+ * 2) Install guzzlehttp/guzzle via Composer. ✅
  * 3) Use guzzle to make your requests to the API as shown in the GET method.
  * 4) Add basic authentication parameter to the request by updating the constructor (__construct()) of the GuzzleWrapper class ( username = testuser, password = thisisatest123 ).
  * 5) Add typed parameters to all methods. (https://www.php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration)
