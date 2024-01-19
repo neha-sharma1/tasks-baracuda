@@ -7,19 +7,22 @@ class GuzzleWrapper {
 	private $username;
 	private $password;
 	
+    private $client;
+
     public function __construct($username, $password) {
         $this->username = $username;
         $this->password = $password;
+        $this->client = new \GuzzleHttp\Client([
+            'base_uri'  => 'https://jsonplaceholder.typicode.com/',
+            'verify' => false,
+            'auth' => [$this->username, $this->password]
+        ]);
     }
     public function getAll() {
         // Add your implementation here
     }
     public function get( $id ) {
-        $client = new \GuzzleHttp\Client( [
-            'base_uri'  => 'https://jsonplaceholder.typicode.com/',
-            'verify' => false, 
-            'auth' => [ $this->username, $this->password ] ] );
-        $res = $client->request( 'GET', 'posts/' . $id );
+        $res = $this->client->request( 'GET', 'posts/' . $id );
         if( $res->getStatusCode() === 200 ) {
             return $res->getBody()->__toString();
         }
