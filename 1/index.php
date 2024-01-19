@@ -43,8 +43,11 @@ require 'vendor/autoload.php';
 // Initialization of the Wrapper and getting an article should work like this:
 $username = 'testuser';
 $password = 'thisisatest123';
+
 $api = new Api\GuzzleWrapper( $username, $password );
 
-// $posts = $api->getAll(); //for all posts
+$posts = $api->getAll(); //for all posts
+var_dump($posts);
+
 $post = $api->get( 1 ); //for a single post
 var_dump($post);

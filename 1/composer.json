@@ -7,7 +7,9 @@
         }
     ],
     "autoload" : {
-
+        "psr-4": {
+            "Api\\": "classes/Api/"
+          }
     },
 
     "require": {

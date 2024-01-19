@@ -19,7 +19,11 @@ class GuzzleWrapper {
         ]);
     }
     public function getAll() {
-        // Add your implementation here
+        $res = $this->client->request( 'GET', 'posts/' );
+        if( $res->getStatusCode() === 200 ) {
+            return $res->getBody()->__toString();
+        }
+        return null;
     }
     public function get( $id ) {
         $res = $this->client->request( 'GET', 'posts/' . $id );
