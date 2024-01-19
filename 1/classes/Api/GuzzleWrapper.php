@@ -15,7 +15,10 @@ class GuzzleWrapper {
         // Add your implementation here
     }
     public function get( $id ) {
-        $client = new \GuzzleHttp\Client( [ 'base_uri'  => 'https://jsonplaceholder.typicode.com/', 'verify' => false ] );
+        $client = new \GuzzleHttp\Client( [
+            'base_uri'  => 'https://jsonplaceholder.typicode.com/',
+            'verify' => false, 
+            'auth' => [ $this->username, $this->password ] ] );
         $res = $client->request( 'GET', 'posts/' . $id );
         if( $res->getStatusCode() === 200 ) {
             return $res->getBody()->__toString();
