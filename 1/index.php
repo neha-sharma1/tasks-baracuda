@@ -44,7 +44,7 @@ require 'vendor/autoload.php';
 $username = 'testuser';
 $password = 'thisisatest123';
 
-$api = new Api\GuzzleWrapper( $username, $password );
+$api = new Api\GuzzleWrapper( $username, $password, 'posts/' );
 
 $posts = $api->getAll(); //for all posts
 var_dump($posts);

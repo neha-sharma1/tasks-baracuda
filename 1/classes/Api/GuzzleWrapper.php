@@ -7,6 +7,7 @@ class GuzzleWrapper {
 	private $username;
 	private $password;
 	
+    private $resource;
     private $client;
 
     /**
@@ -14,8 +15,9 @@ class GuzzleWrapper {
      * 
      * @param string $username
      * @param string $password
+     * @param string $resource
      */
-    public function __construct($username, $password) {
+    public function __construct($username, $password, $resource) {
         $this->username = $username;
         $this->password = $password;
         $this->client = new \GuzzleHttp\Client([
@@ -23,6 +25,8 @@ class GuzzleWrapper {
             'verify' => false,
             'auth' => [$this->username, $this->password]
         ]);
+
+        $this->resource = $resource;
     }
 
     /**
@@ -31,7 +35,7 @@ class GuzzleWrapper {
      * @param Response $res
      * @return string|null
      */
-    public function getBody($res) {
+    private function getBody($res) {
         if( $res->getStatusCode() === 200 ) {
             return $res->getBody()->__toString();
         }
@@ -41,11 +45,11 @@ class GuzzleWrapper {
     }
 
     public function getAll() {
-        $res = $this->client->request( 'GET', 'posts/' );
+        $res = $this->client->request( 'GET', $this->resource );
         return $this->getBody($res);
     }
     public function get( $id ) {
-        $res = $this->client->request( 'GET', 'posts/' . $id );
+        $res = $this->client->request( 'GET', $this->resource . $id );
         return $this->getBody($res);
     }
 
