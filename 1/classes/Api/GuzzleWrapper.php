@@ -79,8 +79,18 @@ class GuzzleWrapper {
         return $this->getBody($res);
     }
 
+    /**
+     * Update a post
+     * 
+     * @param Post $post
+     * @return string|null
+     */
     public function put( $post ) {
+        $res = $this->client->request( 'PUT',  $this->resource . $post->id, [
+            'json' => $post
+        ]);
 
+        return $this->getBody($res);
     }
 
     public function delete( $post ) {
