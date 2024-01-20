@@ -93,7 +93,15 @@ class GuzzleWrapper {
         return $this->getBody($res);
     }
 
-    public function delete( $post ) {
+    /**
+     * Delete a post
+     * 
+     * @param int $postId
+     * @return string|null
+     */
+    public function delete( $postId ) {
+        $res = $this->client->request( 'DELETE',  $this->resource . $postId );
+        return $this->getBody($res);
     }
 }
 

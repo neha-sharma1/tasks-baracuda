@@ -51,3 +51,6 @@ var_dump($posts);
 
 $post = $api->get( 1 ); //for a single post
 var_dump($post);
+
+$post = $api->delete( 1 ); //delete a post
+var_dump($post);
