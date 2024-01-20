@@ -65,8 +65,18 @@ class GuzzleWrapper {
         return $this->getBody($res);
     }
 
+    /**
+     * Create a post
+     * 
+     * @param object $post
+     * @return string|null
+     */
     public function post( $post ) {
-        // Add your implementation here
+        $res = $this->client->request( 'POST', $this->resource, [
+            'json' => $post
+        ]);
+
+        return $this->getBody($res);
     }
 
     public function put( $post ) {
