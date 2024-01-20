@@ -1,5 +1,4 @@
 <?php
-// Add comments
 namespace Api;
 
 class GuzzleWrapper {
@@ -17,7 +16,8 @@ class GuzzleWrapper {
      * @param string $password
      * @param string $resource
      */
-    public function __construct($username, $password, $resource) {
+
+     public function __construct(string $username= 'testuser', string  $password = 'thisisatest123', string $resource = null) {
         $this->username = $username;
         $this->password = $password;
         $this->client = new \GuzzleHttp\Client([
@@ -32,10 +32,10 @@ class GuzzleWrapper {
     /**
      * Get the body
      * 
-     * @param Response $res
+     * @param GuzzleHttp\Psr7\Response $res
      * @return string|null
      */
-    private function getBody($res) {
+    public function getBody(\GuzzleHttp\Psr7\Response $res) {
         if( $res->getStatusCode() === 200 ) {
             return $res->getBody()->__toString();
         }
@@ -60,18 +60,18 @@ class GuzzleWrapper {
      * @param int $id
      * @return string|null
      */
-    public function get($id) {
-        $res = $this->client->request('GET', $this->resource . $id);
+    public function get( int $id ) {
+        $res = $this->client->request( 'GET', $this->resource . $id );
         return $this->getBody($res);
     }
 
     /**
      * Create a post
      * 
-     * @param object $post
+     * @param Post $post
      * @return string|null
      */
-    public function post( $post ) {
+    public function post( Post $post ) {
         $res = $this->client->request( 'POST', $this->resource, [
             'json' => $post
         ]);
@@ -85,7 +85,7 @@ class GuzzleWrapper {
      * @param Post $post
      * @return string|null
      */
-    public function put( $post ) {
+    public function put( Post $post ) {
         $res = $this->client->request( 'PUT',  $this->resource . $post->id, [
             'json' => $post
         ]);
@@ -99,7 +99,7 @@ class GuzzleWrapper {
      * @param int $postId
      * @return string|null
      */
-    public function delete( $postId ) {
+    public function delete( int $postId ) {
         $res = $this->client->request( 'DELETE',  $this->resource . $postId );
         return $this->getBody($res);
     }
@@ -112,7 +112,7 @@ class Post {
     public $title;
     public $body;
 
-    public static function get( $id ) {
+    public static function get( int $id ) {
 
     }
 
